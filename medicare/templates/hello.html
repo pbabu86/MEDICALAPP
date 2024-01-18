@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1> templates as response</h1>
+    Data is:<h4>{{name}}</h4>
+
+    {% if x > y %}
+        <p>In if block</p>
+        <p>{{x}} is greater</p>
+    {% else %}
+        <p>In else block</p>
+        <p>{{y}} is greater</p>
+    {% endif %}
+
+    <h4>List is:</h4>
+    {% for x in list %}
+        <p>{{x}}</p>
+
+    {% endfor %}
+
+    <h2>Products:</h2>
+    {% for x in products %}
+        <p>{{x}}</p>
+        {% endfor %}
+
+        <h2>Products:</h2>
+        {% for x in products %}
+            <strong>{{forloop.counter}}</strong>&nbsp;&nbsp;&nbsp;
+            <strong>Name:</strong>{{x.name}} &nbsp;&nbsp;&nbsp;
+            <strong>Category:</strong>{{x.cat}} &nbsp;&nbsp;&nbsp;
+            <strong>Price:</strong>{{x.price}} &nbsp;&nbsp;&nbsp;
+            <hr>
+           
+            {% endfor %}
+
+        <button onclick="greet()">click me</button>
+        <img src="{% static 'images/mvt.png' %}" alt="">
+
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/assest/css/bootstrap.min.css">
+    <title>Medicare|Login</title>
+</head>
+<body>
+    
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <a href="/home" style="text-decoration:none;">Home</a>
+                </div>
+
+
+                <div class="col-md-4 shadow mt-5 p-4 mx-auto">
+                    <h3 class="text-center">Login</h3>
+                    {% if errmsg %}
+                    <div class="alert alert-danger">
+                        {{errmsg}}
+                    </div>
+
+                     {% endif %}
+
+                     <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="input1" class="form-label"><strong>Username:</strong></label>
+                            <input type="email" class="form-control" name="uname" id="input1" placeholder="name@example.com">
+                        </div><!-- Username end -->
+
+                        <div class="mb-3">
+                            <label for="input2" class="form-label"><strong>Password:</strong></label>
+                            <input type="password" class="form-control" name="upass" id="input2" placeholder="Enter password">
+                        </div><!-- password -->
+
+                       
+                        <div class="mb-3">
+                            <input type="submit" class="btn btn-danger" value="Login">
+                            Not a user?<a href="/register" style="text-decoration:none;">Register</a>
+                        </div>
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <script src="assest/js/bootstrap.min.js"></script>
+</body>
+</html>
